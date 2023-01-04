@@ -1,7 +1,7 @@
 {
   "name": "google-auth-struct",
-  "version": "1.0.0",
-  "description": "Pacote para facilitar login e cadastro com conta google",
+  "version": "1.0.2",
+  "description": "Pacote para facilitar login e manipulação de dados com conta google",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

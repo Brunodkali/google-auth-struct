@@ -21,7 +21,7 @@ The googleAuth() function requires as parameters the token (credential) and the 
 
 [Access the Google Dev Console](https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwi-zbu2wa78AhV-HbkGHZcMCyMQFnoECBMQAQ&url=https%3A%2F%2Fconsole.developers.google.com%2F&usg=AOvVaw39ieEDI7pzBj4NtuzqS57M)
 
-To capture the credential just use the req.body in your authentication route:
+To get the credential just use the req.body in your authentication route:
 
     const token = req.body.credential
     
@@ -30,22 +30,22 @@ To capture the credential just use the req.body in your authentication route:
 
 Method for general information:
     
-    googleAuth().selectAll() - returns all user data
+    googleAuth().getUserData() - returns all user data
     
     
 Method for name information:
     
-    googleAuth().selectUser() - returns name of user
+    googleAuth().getUserName() - returns name of user
     
     
 Method for email information:
     
-    googleAuth().selectEmail() - returns email of user
+    googleAuth().getUserEmail() - returns email of user
     
 
 Method for picture information:
     
-    googleAuth().selectPicture() - returns picture of user
+    googleAuth().getUserPicture() - returns picture of user
 
 
 ## Note

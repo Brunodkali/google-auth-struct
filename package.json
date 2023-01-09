@@ -1,6 +1,6 @@
 {
   "name": "google-auth-struct",
-  "version": "1.0.3",
+  "version": "1.0.5",
   "description": "Pacote para facilitar login e manipulação de dados com conta google",
   "main": "index.js",
   "scripts": {

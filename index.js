@@ -2,7 +2,7 @@ const { OAuth2Client } = require('google-auth-library');
 
 async function googleAuth(token, client_id) {
     return {
-        async selectAll() {
+        async getUserData() {
             const client = new OAuth2Client(client_id);
 
             if (!token) {
@@ -21,7 +21,7 @@ async function googleAuth(token, client_id) {
                 return err;
             }
         },
-        async selectUser() {
+        async getUserName() {
             const client = new OAuth2Client(client_id);
             
             if (!token) {
@@ -40,7 +40,7 @@ async function googleAuth(token, client_id) {
                 return err;
             }
         },
-        async selectEmail() {
+        async getUserEmail() {
             const client = new OAuth2Client(client_id);
             
             if (!token) {
@@ -59,7 +59,7 @@ async function googleAuth(token, client_id) {
                 return err;
             }
         },
-        async selectPicture() {
+        async getUserPicture() {
             const client = new OAuth2Client(client_id);
             
             if (!token) {

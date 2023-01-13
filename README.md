@@ -11,51 +11,51 @@ To install the latest version on npm locally and save it in your package's
 
     npm install google-auth-struct
     
-To use just import in your code:
+To use it, just import it in your code:
 
-    const { googleAuth } = require("google-auth-struct") or import { googleAuth } from "google-auth-struct"
+    const { googleAuth } = require("google-auth-struct")
 
 ## Methods and functions
 
-The googleAuth() function requires as parameters the token (credential) and the Client ID available in the 'credentials' tab of the Google Developer Console, which will allow you to use the authentication service with Google.
+The googleAuth(token, clientId) function allows you to use Google's authentication service. It takes the token (credential) and the Client ID (available in the 'credentials' tab of the Google Developer Console) as parameters.
 
 [Access the Google Dev Console](https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwi-zbu2wa78AhV-HbkGHZcMCyMQFnoECBMQAQ&url=https%3A%2F%2Fconsole.developers.google.com%2F&usg=AOvVaw39ieEDI7pzBj4NtuzqS57M)
 
-To get the credential just use the req.body in your authentication route:
+Use the req.body in your authentication route to get the credential:
 
     const token = req.body.credential
     
-> Using the googleAuth() function, it is possible to use methods to help manipulate user data.
+> By using the googleAuth() function, it is possible to use methods to help handling user data.
 
 
-Method for general information:
+The .getUserData() method returns the user's general information as an object:
     
-    googleAuth().getUserData() - returns all user data
-    
-    
-Method for name information:
-    
-    googleAuth().getUserName() - returns name of user
+    await googleAuth(token, clientId).getUserData()
     
     
-Method for email information:
+The .getUserName() method returns the user's name as a string:
     
-    googleAuth().getUserEmail() - returns email of user
+    await googleAuth(token, clientId).getUserName()
+    
+    
+The .getUserEmail() method returns the user's email address as a string:
+    
+    await googleAuth(token, clientId).getUserEmail()
     
 
-Method for picture information:
+The .getUserPfp() method returns the user's profile picture as a string (URL):
     
-    googleAuth().getUserPicture() - returns picture of user
+    await googleAuth(token, clientId).getUserPfp()
 
 
 ## Note
 
-The google-auth-struct NPM uses an asynchronous structure, so you need to use the async/await pattern and the .then() and .catch() methods to handle responses
+The google-auth-struct NPM has a promise-based structure.
     
     
 ## License
 
 Google-auth-struct copyright© 2022-present Bruno Duarte <duartebruno581@gmail.com>  
 
-Google-auth-struct is free software licensed under the MIT license 
+Google-auth-struct is a free software licensed under the MIT license 
 ([LICENSE](https://opensource.org/licenses/MIT)) file for more details.

@@ -59,7 +59,7 @@ async function googleAuth(token, client_id) {
                 return err;
             }
         },
-        async getUserPicture() {
+        async getUserPfp() {
             const client = new OAuth2Client(client_id);
             
             if (!token) {
